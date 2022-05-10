@@ -5,3 +5,5 @@ Deadline is imagined as a DAO building block used to ensure accountability and e
 I intend to include a number of configuration options which have probably already come to your mind; such as an upfront payment made available immediately, or multiple milestones which release funding over time.
 
 This project is not complete at the moment. I'm new to the space and not even really sure if this has the use case that I thought it might. This is mainly just a project meant for me to learn Solidity and become more familiar with the tools and libraries commonly used to develop and deploy smart contracts.
+
+This repository will eventually be split into two seperate projects. I'm in the process of building a React component library built with ethers.js which will accept an ethers Contract instance and provide a fully functioning front end for your smart contract, in addition to individual components that you can use more flexibly while building out your client.
