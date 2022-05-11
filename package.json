@@ -1,7 +1,7 @@
 {
   "name": "ez-contract-ui",
   "version": "0.1.2-0",
-  "private": true,
+  "main": "./src",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
