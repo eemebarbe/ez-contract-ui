@@ -66,7 +66,7 @@ function App(props) {
                 <Header />
                 <Toast />
                 <Routes>
-                    <Route path="/" element={reRouteIfAuthenticated(<Lander />)} />
+                    <Route path="/" element={reRouteIfAuthenticated(<Lander contract={props.contract} />)} />
                     <Route path="dashboard" element={routeWithAuth(<Dashboard contract={props.contract} />)} />
                     <Route path="about" element={<About />} />
                 </Routes>

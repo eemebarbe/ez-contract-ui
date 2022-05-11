@@ -3,7 +3,7 @@ import { UserProvider } from "./contexts/userContext"
 import { FunctionForm, UserStatus, Authentication } from "./components"
 import App from "./App.js"
 
-export default class Contract {
+export default class EzContractUi {
     constructor(contract, resultCallback) {
         this.contract = contract
         this.abi = contract.interface.fragments
