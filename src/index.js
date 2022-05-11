@@ -36,6 +36,5 @@ export default class EzContractUi {
             </ToastProvider>
         )
     }
-
     //include direct access to hooks/context?
 }
