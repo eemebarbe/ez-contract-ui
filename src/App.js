@@ -6,7 +6,6 @@ import { colors } from "./themes"
 import { UserContext } from "./contexts/userContext"
 import GlobalStyle from "./themes/GlobalStyle"
 import Dashboard from "./routes/Dashboard"
-import About from "./routes/About"
 import Lander from "./routes/Lander"
 
 function App(props) {
@@ -68,7 +67,6 @@ function App(props) {
                 <Routes>
                     <Route path="/" element={reRouteIfAuthenticated(<Lander contract={props.contract} />)} />
                     <Route path="dashboard" element={routeWithAuth(<Dashboard contract={props.contract} />)} />
-                    <Route path="about" element={<About />} />
                 </Routes>
             </BrowserRouter>
         )
