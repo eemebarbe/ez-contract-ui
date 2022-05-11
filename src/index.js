@@ -1,3 +1,4 @@
+import React from "react"
 import { ToastProvider } from "./contexts/toastContext"
 import { UserProvider } from "./contexts/userContext"
 import { FunctionForm, UserStatus, Authentication } from "./components"
