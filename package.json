@@ -1,6 +1,6 @@
 {
   "name": "ez-contract-ui",
-  "version": "0.1.2-3",
+  "version": "0.1.2-4",
   "main": "dist/index.js",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
