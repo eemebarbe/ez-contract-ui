@@ -1,5 +1,7 @@
 "use strict";
 
+var _react = _interopRequireDefault(require("react"));
+
 var _reactDom = require("react-dom");
 
 var _ezContractUi = _interopRequireDefault(require("./ez-contract-ui"));
@@ -16,4 +18,4 @@ const signer = provider.getSigner();
 const contract = new _ethers.ethers.Contract(contractAddress, _ExampleContract.default.abi, signer);
 const contractUi = new _ezContractUi.default(contract, () => {});
 const rootElement = document.getElementById("root");
-(0, _reactDom.render)( /*#__PURE__*/React.createElement(React.Fragment, null, contractUi.app()), rootElement);
+(0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, contractUi.app()), rootElement);
