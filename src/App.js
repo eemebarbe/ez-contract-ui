@@ -62,7 +62,7 @@ function App(props) {
     const router = () => {
         return (
             <BrowserRouter>
-                <Header />
+                <Header contractName={props.contract.address} />
                 <Toast />
                 <Routes>
                     <Route path="/" element={reRouteIfAuthenticated(<Lander contract={props.contract} />)} />

@@ -37,7 +37,7 @@ const HeaderWithRouter = (props) => {
             {menuOpen && menu()}
             <Header {...props}>
                 <HeaderInner>
-                    <CompanyLogo onClick={() => (userId ? pushTo("/") : pushTo("/"))}>Deadline</CompanyLogo>
+                    <CompanyLogo onClick={() => (userId ? pushTo("/") : pushTo("/"))}>{props.contractName}</CompanyLogo>
                     <div>
                         {userId && <WalletId>{userId}</WalletId>}
                         {userId && menuButtonState()}

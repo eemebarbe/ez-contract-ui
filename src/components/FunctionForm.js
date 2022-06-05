@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Card, H2, Form, Input, Button } from "../components"
 
 const FunctionForm = (props) => {
-    const { abi } = props
+    const abi = props.abi[1]
     const [formData, setFormData] = useState({})
     const [loading, setLoading] = useState(false)
 
@@ -12,6 +12,7 @@ const FunctionForm = (props) => {
             return (
                 <Input
                     name={x.name}
+                    key={x.name}
                     placeholder={x.name}
                     value={formData?.[functionName]?.[x.name] ?? ""}
                     onChange={(e) =>

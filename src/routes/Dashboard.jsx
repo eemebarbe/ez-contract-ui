@@ -4,8 +4,8 @@ import { ToastContext } from "../contexts/toastContext"
 import { UserContext } from "../contexts/userContext"
 
 function Dashboard(props) {
-    console.log(props.contract.interface)
     let contractAddress = props.contract.address
+    console.log(props.contract)
     const { sendMessage } = useContext(ToastContext)
     const { userState, userDispatch } = useContext(UserContext)
 
@@ -22,8 +22,8 @@ function Dashboard(props) {
     }
 
     const allContractFunctions = () => {
-        return props.contract.interface.functions.map((x) => {
-            return <FunctionForm abi={x} contract={props.contract} />
+        return Object.entries(props.contract.interface.functions).map((x) => {
+            return <FunctionForm abi={x} key={x[0]} />
         })
     }
 

@@ -1,41 +1,13 @@
-import React from "react"
-import { ToastProvider } from "./contexts/toastContext"
-import { UserProvider } from "./contexts/userContext"
-import { FunctionForm, UserStatus, Authentication } from "./components"
-import App from "./App.js"
+import { render } from "react-dom"
+import Contract from "./ez-contract-ui"
+import { ethers } from "ethers"
+import ExampleContract from "./ExampleContract.json"
+let contractAddress = "0x5fbdb2315678afecb367f032d93f642f64180aa3"
 
-export default class EzContractUi {
-    constructor(contract, resultCallback) {
-        this.contract = contract
-        this.abi = contract.interface.fragments
-        this.formComponent = (abiObj) => <FunctionForm contract={contract} abi={abiObj} handleResult={resultCallback} />
-        this.abi.forEach((x) => {
-            this[x.name] = this.formComponent(x)
-        })
-    }
+const provider = new ethers.providers.Web3Provider(window.ethereum)
+const signer = provider.getSigner()
+const contract = new ethers.Contract(contractAddress, ExampleContract.abi, signer)
+const contractUi = new Contract(contract, () => {})
 
-    renderContractFunction = (functionName) => {
-        return this[functionName]
-    }
-
-    allContractFunctions = () => {
-        return this.abi.map((x) => {
-            return this.formComponent(x)
-        })
-    }
-
-    authenticator = () => <Authentication contract={this.contract} />
-
-    userHistory = () => <UserStatus>{this.contract.provider}</UserStatus>
-
-    app = () => {
-        return (
-            <ToastProvider>
-                <UserProvider>
-                    <App contract={this.contract} />
-                </UserProvider>
-            </ToastProvider>
-        )
-    }
-    //include direct access to hooks/context?
-}
+const rootElement = document.getElementById("root")
+render(<>{contractUi.app()}</>, rootElement)
