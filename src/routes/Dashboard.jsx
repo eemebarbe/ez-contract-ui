@@ -5,7 +5,6 @@ import { UserContext } from "../contexts/userContext"
 
 function Dashboard(props) {
     let contractAddress = props.contract.address
-    console.log(props.contract)
     const { sendMessage } = useContext(ToastContext)
     const { userState, userDispatch } = useContext(UserContext)
 

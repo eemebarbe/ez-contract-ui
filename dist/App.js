@@ -95,7 +95,9 @@ function App(props) {
   };
 
   const router = () => {
-    return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_components.Header, null), /*#__PURE__*/_react.default.createElement(_components.Toast, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Routes, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_components.Header, {
+      contractName: props.contract.address
+    }), /*#__PURE__*/_react.default.createElement(_components.Toast, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Routes, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
       path: "/",
       element: reRouteIfAuthenticated( /*#__PURE__*/_react.default.createElement(_Lander.default, {
         contract: props.contract

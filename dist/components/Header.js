@@ -61,7 +61,7 @@ const HeaderWithRouter = props => {
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, menuOpen && menu(), /*#__PURE__*/_react.default.createElement(Header, props, /*#__PURE__*/_react.default.createElement(HeaderInner, null, /*#__PURE__*/_react.default.createElement(CompanyLogo, {
     onClick: () => userId ? pushTo("/") : pushTo("/")
-  }, "Deadline"), /*#__PURE__*/_react.default.createElement("div", null, userId && /*#__PURE__*/_react.default.createElement(WalletId, null, userId), userId && menuButtonState()))));
+  }, props.contractName), /*#__PURE__*/_react.default.createElement("div", null, userId && /*#__PURE__*/_react.default.createElement(WalletId, null, userId), userId && menuButtonState()))));
 };
 
 const Header = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    transform: translateY(", "px);\n    z-index: 8;\n    position: absolute;\n    background-color: ", ";\n    width: 100%;\n    height: ", "px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    box-shadow: ", ";\n    @media (max-width: 480px) {\n        display: none;\n    }\n"])), props => "-" + props.scrollTop, props => props.theme.secondLayerBackground, _themes.metrics.headerHeight, props => "0 1px ".concat(_themes.metrics.baseUnit / 2, "px 0 ").concat(props.theme.shadow));

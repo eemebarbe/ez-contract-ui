@@ -24,9 +24,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 const FunctionForm = props => {
-  const {
-    abi
-  } = props;
+  const abi = props.abi[1];
   const [formData, setFormData] = (0, _react.useState)({});
   const [loading, setLoading] = (0, _react.useState)(false);
 
@@ -37,6 +35,7 @@ const FunctionForm = props => {
 
       return /*#__PURE__*/_react.default.createElement(_components.Input, {
         name: x.name,
+        key: x.name,
         placeholder: x.name,
         value: (_formData$functionNam = formData === null || formData === void 0 ? void 0 : (_formData$functionNam2 = formData[functionName]) === null || _formData$functionNam2 === void 0 ? void 0 : _formData$functionNam2[x.name]) !== null && _formData$functionNam !== void 0 ? _formData$functionNam : "",
         onChange: e => setFormData(_objectSpread(_objectSpread({}, formData), {}, {
